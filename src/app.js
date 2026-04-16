@@ -30,8 +30,8 @@ app.use(cors());
 app.use(express.json({ limit: "1mb" }));
 app.use(morgan("dev"));
 
-app.get("/health", (_req, res) => {
-  return res.status(200).json({ success: true, message: "OK" });
+app.get("/", (_req, res) => {
+  return res.status(200).json({ success: true, message: "Welcome to Books Catalog API" });
 });
 
 app.use("/api/users", userRoutes);
